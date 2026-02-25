@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class PLayerData
+public class PlayerData
 {
     public Vector3 lastPosition;
     public Quaternion lastRotation;

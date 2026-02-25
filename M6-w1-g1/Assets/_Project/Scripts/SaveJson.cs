@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using System.IO;
 public class SaveJson : MonoBehaviour
@@ -24,7 +23,7 @@ public class SaveJson : MonoBehaviour
     }
     public void Save()
     {
-        PLayerData data = new PLayerData();
+        PlayerData data = new PlayerData();
         data.lastPosition = transform.position;
         data.lastRotation = transform.rotation;
 
@@ -36,7 +35,7 @@ public class SaveJson : MonoBehaviour
         if (File.Exists(path))
         {
             string json = File.ReadAllText(path);
-            PLayerData data = JsonUtility.FromJson<PLayerData>(json);
+            PlayerData data = JsonUtility.FromJson<PlayerData>(json);
             transform.position = data.lastPosition;
             transform.rotation = data.lastRotation;
         }
